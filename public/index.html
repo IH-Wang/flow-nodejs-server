@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>flow.js on nodejs-server</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <div class="page-header header">
+            <h1>flow.js on nodejs-server</h1>
+        </div>
+        <div class="row">
+            <div style="text-align:center;">
+                <h3>Select file to upload</h3>
+              </div>
+        </div>
+        <div class="row">
+            <div class="resumable-error">
+                您的瀏覽器不支援！
+            </div>
+        </div>
+        <div class="row">
+            <div class="alert-box alert alertMessage" data-nothingToUpload>Error Nothing To Upload, Please Add A File</div>
+            <div id="dragHere" class="drop-zone">Drag & Drop Here or
+                <a class="addButton" id="addButton">+ Add File</a>
+            </div>
+        </div>
+        <div class="row buttonBlock">
+            <button class="btn btn-primary buttonStyle" id="uploadButton">Start Upload</button>
+            <button class="btn btn-primary buttonStyle" id="pauseButton">Pause Upload
+            <i class="glyphicon glyphicon-pause"></i></button>
+            <button class="btn btn-info buttonStyle" id="resumeButton">Resume Upload
+            <i class="glyphicon glyphicon-play"></i></button>
+            <button class="btn btn-danger buttonStyle" id="clearButton">Clear File
+            <i class="glyphicon glyphicon-remove"></i> </button>
+            <button class="btn btn-warning buttonStyle" id="downloadButton">download File
+            <i class="glyphicon glyphicon-save"></i> </button>
+        </div>
+        <div class="row" id="flowResult">
+            <div class="col-md-5">
+                <div id="results" class="resultPanel"></div>
+            </div>
+            <div class="col-md-7">
+                <progress value="0" id="progress" max="100" class="resultPanel"></progress>
+            </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 fileStatus">
+            <span id="file-status"></span>
+          </div>
+          <div class="col-md-12 fileProgress">
+            Upload Progress Rate:<span id="file-progress"></span>
+          </div>
+          <div class="col-md-12 fileProgress">
+            Upload AverageSpeed:<span id="file-averageSpeed"></span>
+          </div>
+          <div class="col-md-12 fileProgress">
+            Time Remaining:<span id="file-timeRemaining"></span>
+          </div>
+        </div>
+    </div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<script src="flow.js"></script>
+<script src="index.js"></script>
+
+</html>
